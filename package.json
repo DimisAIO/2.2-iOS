@@ -1,0 +1,17 @@
+{
+  "name": "ios-tool",
+  "version": "1.0.0",
+  "description": "2.2 iOS by DimisAIO",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "archiver": "^7.0.1",
+    "decompress": "^4.2.1",
+    "prompt-sync": "^4.2.0"
+  }
+}
