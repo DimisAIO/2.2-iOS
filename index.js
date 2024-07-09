@@ -19,7 +19,7 @@ async function main() {
 
     var dir = `${name.toLowerCase()}-${crypto.randomBytes(8).toString('hex')}`;
 
-    var bundle = process.env.bundle ? process.env.name : prompt("Enter bundle id (23 chars): ");
+    var bundle = process.env.bundle ? process.env.bundle : prompt("Enter bundle id (23 chars): ");
 
     while (bundle.length != 23) {
         console.log("Length isn't 23!!!\n");
