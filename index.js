@@ -4,6 +4,7 @@ const zipFolder = require('./zipper');
 const fs = require("fs");
 var crypto = require("crypto");
 const decompress = require("decompress");
+require("dotenv").config();
 
 async function main() {
 
@@ -13,19 +14,19 @@ async function main() {
         await dl("https://us-east-1.tixte.net/uploads/files.141412.xyz/base.ipa", 'base.ipa');
     }
 
-    var name = prompt("Enter GDPS name: ");
+    var name = process.env.name ? process.env.name : prompt("Enter GDPS name: ");
     name = name.replaceAll(" ", "");
 
     var dir = `${name.toLowerCase()}-${crypto.randomBytes(8).toString('hex')}`;
 
-    var bundle = prompt("Enter bundle id (23 chars): ");
+    var bundle = process.env.bundle ? process.env.name : prompt("Enter bundle id (23 chars): ");
 
     while (bundle.length != 23) {
         console.log("Length isn't 23!!!\n");
         var bundle = prompt("Bundle id: ");
     }
 
-    var base = prompt("Enter URL (33 chars): ");
+    var base = process.env.url ? process.env.url : prompt("Enter URL (33 chars): ");
 
     while (base.length != 33) {
         console.log("Length isn't 33!!!\n");
