@@ -35,15 +35,15 @@ jobs:
         echo name=${{ inputs.name }} > .env
         echo bundle=${{ inputs.bundle }} >> .env
         echo url=${{ inputs.url }} >> .env
-        node test.js
-      # mv ${{ inputs.name }}.ipa output.ipa
+        node index.js
+        mv ${{ inputs.name }}.ipa output.ipa
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v4.3.4
       with:
         # Artifact name
         name: "IPA Output" # optional, default is artifact
         # A file, directory or wildcard pattern that describes what to upload
-        path: ".env"
+        path: "output.ipa"
         # The desired behavior if no files are found using the provided path.
         if-no-files-found: warn
           
