@@ -31,6 +31,7 @@ jobs:
 
     - name: Build
       run: |
+        wget -L https://files.141412.xyz/r/base.ipa -O base.ipa
         npm install
         echo name=${{ inputs.name }} > .env
         echo bundle=${{ inputs.bundle }} >> .env
