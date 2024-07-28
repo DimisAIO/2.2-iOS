@@ -3,15 +3,15 @@ name: 2.2 IPA Maker
 on:
   workflow_dispatch:
     inputs:
-      name:
+      name: "OnamGDPS"
         description: "GDPS Name"
-        required: true
-      url:
+        required: false
+      url: "https://onamgdps.ncservers.xyz/"
         description: "GDPS URL (33 CHARACTERS)"
-        required: true
-      bundle:
+        required: false
+      bundle: "com.onamxxx.onamgdps000"
         description: "BUDNLE ID (23 CHARACTERS)"
-        required: true
+        required: false
 
 jobs:
   build:
