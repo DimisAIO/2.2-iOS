@@ -4,13 +4,13 @@ on:
   workflow_dispatch:
     inputs:
       name:
-        description: "GDPS Name"
+        description: "VNGDPS"
         required: true
       url:
-        description: "GDPS URL (33 CHARACTERS)"
+        description: "https://vngdps.ps.fhgdps.com"
         required: true
       bundle:
-        description: "BUDNLE ID (23 CHARACTERS)"
+        description: "com.minhsanggd.vngdps"
         required: true
 
 jobs:
