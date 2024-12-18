@@ -7,6 +7,8 @@ const { basename } = require('path')
 
 const TIMEOUT = 10000
 
+const BASE_IPA_NAME = process.argv.includes("--icreate") ? "icreate.ipa" : "base.ipa";
+
 module.exports = function(url, path) {
   const uri = parse(url)
   if (!path) {
@@ -24,7 +26,7 @@ module.exports = function(url, path) {
           file.write(chunk)
           downloaded += chunk.length
           percent = (100.0 * downloaded / len).toFixed(2)
-          process.stdout.write(`Downloading base.ipa - ${percent}%\r`)
+          process.stdout.write(`Downloading ${BASE_IPA_NAME} - ${percent}%\r`)
         })
         .on('end', function() {
           file.end()
